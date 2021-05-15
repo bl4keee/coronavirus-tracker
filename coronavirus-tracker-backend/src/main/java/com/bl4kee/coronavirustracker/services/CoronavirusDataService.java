@@ -1,6 +1,8 @@
 package com.bl4kee.coronavirustracker.services;
 
 import com.bl4kee.coronavirustracker.entities.LocationStats;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,10 +18,12 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 @Service
+@RequiredArgsConstructor
 public class CoronavirusDataService {
 
-    private List<LocationStats> allStats = new ArrayList<>();
+    public List<LocationStats> allStats = new ArrayList<>();
 
     private static String CORONAVIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 
@@ -50,7 +54,6 @@ public class CoronavirusDataService {
             locationStat.setState(record.get("Province/State"));
             locationStat.setCountry(record.get("Country/Region"));
             locationStat.setLatestTotalNumberOfCases(Integer.parseInt(record.get(record.size() -  1)));
-            System.out.println(locationStat);
             newStats.add(locationStat);
         }
         this.allStats = newStats;
