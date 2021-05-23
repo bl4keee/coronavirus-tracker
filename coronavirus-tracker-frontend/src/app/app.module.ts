@@ -5,6 +5,7 @@ import { TableComponent } from './components/table/table.component';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {MatTableModule} from '@angular/material/table';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
