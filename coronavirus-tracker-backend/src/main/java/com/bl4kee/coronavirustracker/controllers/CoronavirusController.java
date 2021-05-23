@@ -3,6 +3,7 @@ package com.bl4kee.coronavirustracker.controllers;
 import com.bl4kee.coronavirustracker.entities.LocationStats;
 import com.bl4kee.coronavirustracker.services.CoronavirusDataService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,8 @@ import java.util.List;
 @RequestMapping("/coronavirus")
 public class CoronavirusController {
 
-    private final CoronavirusDataService coronavirusDataService;
+    @Autowired
+    CoronavirusDataService coronavirusDataService;
 
     @CrossOrigin
     @GetMapping("/")
