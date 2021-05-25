@@ -1,3 +1,22 @@
 table {
   width: 100%;
 }
+
+.mat-header-row {
+  font-weight: bold;
+}
+
+.mat-column-state {
+  flex: none;
+  width: 25%;
+}
+
+.mat-column-country {
+  flex: none;
+  width: 25%;
+}
+
+.mat-column-totalNumberOfCases {
+  flex: none;
+  width: 25%;
+}
